@@ -1,0 +1,22 @@
+2022-07-06 21:49:41 INFO  [TestNG] Running:
+  C:\CustomRepo\internalCourse\13Gradle\src\test\resources\testng.xml
+
+2022-07-06 21:49:41 INFO  onStart method started 
+2022-07-06 21:49:41 INFO  Method started notAtomicityMethod
+2022-07-06 21:49:41 INFO  Method started notAtomicityMethod
+2022-07-06 21:49:41 INFO  Method started notAtomicityMethod
+2022-07-06 21:49:57 INFO  This method is invoked after- notAtomicityMethod
+2022-07-06 21:49:57 INFO  Method passed notAtomicityMethod
+2022-07-06 21:49:58 INFO  This method is invoked after- clean
+2022-07-06 21:49:58 INFO  Method started notAtomicityMethod
+2022-07-06 21:49:58 INFO  This method is invoked after- notAtomicityMethod
+2022-07-06 21:49:58 INFO  Method failed notAtomicityMethod
+2022-07-06 21:49:58 INFO  This method is invoked after- clean
+2022-07-06 21:49:59 INFO  This method is invoked after- notAtomicityMethod
+2022-07-06 21:49:59 INFO  Method passed notAtomicityMethod
+2022-07-06 21:49:59 INFO  This method is invoked after- clean
+2022-07-06 21:50:38 INFO  This method is invoked after- notAtomicityMethod
+2022-07-06 21:50:38 INFO  Method passed notAtomicityMethod
+2022-07-06 21:50:38 INFO  This method is invoked after- clean
+2022-07-06 21:50:38 INFO  This method is invoked after- terminate
+2022-07-06 21:50:38 INFO  onFinish method finished 

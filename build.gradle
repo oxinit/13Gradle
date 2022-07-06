@@ -1,0 +1,134 @@
+plugins {
+        id 'java'
+//    id 'jvm-test-suite'
+    }
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+   // flatDir {
+   //     dirs 'libs'
+   // } таска не підтягує бо нема конфіг файлу
+
+    //крашить коли обидва обрано
+   // mavenLocal()
+
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation group: 'org.seleniumhq.selenium', name: 'selenium-java', version: '4.2.1'
+// https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+    implementation group: 'io.github.bonigarcia', name: 'webdrivermanager', version: '5.2.1'
+// https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.11'
+// https://mvnrepository.com/artifact/org.testng/testng
+    implementation group: 'org.testng', name: 'testng', version: '7.6.0'
+
+// https://mvnrepository.com/artifact/javax.xml.bind/jaxb-api
+    implementation group: 'javax.xml.bind', name: 'jaxb-api', version: '2.4.0-b180830.0359'
+// https://mvnrepository.com/artifact/jakarta.xml.bind/jakarta.xml.bind-api
+    implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.0'
+// https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl
+    implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '4.0.0'
+    implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'org.jetbrains:annotations:20.1.0'
+
+}
+/*
+test {
+    maxParallelForks = Runtime.runtime.availableProcessors()
+}
+test {
+    maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
+}
+
+
+ */
+
+
+test {
+  //  systemProperties(System.getProperties())
+//testFrameworkConfigure
+    useTestNG(){
+        //нерозпізнає наступні методи
+       // preserveOrder true
+    //    groupByInstances= true
+        options.parallel = 'instances'
+     options.threadCount = 2
+
+       // include( 'BasketTest')
+        //options.suites file('testng.xml') скіпає тести чомусь
+          // suites '.src/test/resources/testng.xml' сейм
+        reports.html.enabled=true
+        reports.html.destination=file("$buildDir/reports/tests/test")
+
+       // options {  listeners<< 'org.uncommons.reportng.JUnitXMLReported'}
+        options.useDefaultListeners true
+        testLogging {
+            events = ['PASSED', 'FAILED', 'SKIPPED']
+        }
+    }
+    doLast {
+        System.out.println 'This is executed during the execution phase.'
+    }
+}
+//dead?
+/*tasks.withType(Test){
+    testLogging{
+        exceptionFormat 'full'
+        events'started','skipped','passed','failed'
+    }
+}
+ */
+/*task copyDeps(type:Copy){
+    from configurations.compile
+    into 'libs'
+}
+тре конфіг
+*/
+task createZip(type: Zip){
+    from projectDir
+    include 'src/**/*'
+    include 'libs/**/*'
+    include 'gradle/**/*'
+    include '*.gradle'
+    include 'gradle.properties'
+    include 'assertinfo.json'
+    include 'gradlew'
+    include 'gradlew.bat'
+    doLast{
+        System.out.println"Path to zip: $archivePath.path"
+    }
+}
+
+tasks.register('configured') {
+    System.out.println '123This is also executed during the configuration phase, because :configured is used in the build.'
+}
+
+tasks.register('testBoth') {doFirst {
+        System.out.println 'This is executed first during the execution phase.'
+    }
+    doLast {
+        System.out.println 'This is executed last during the execution phase.'
+    }
+    System.out.println 'This is executed during the configuration phase as well, because :testBoth is used in the build.'
+}
+
+compileJava.options.encoding = 'UTF-8'
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
+}
+/*
+task runTests(type:JavaExec,dependsOn:'classes'){
+    main = 'org.testng.TestNG'
+    classpath = files("./src/test/resources",
+            project.sourceSets.main.compileClasspath,
+            project.sourceSets.test.compileClasspath,
+            project.sourceSets.main.runtimeClasspath,
+            project.sourceSets.test.runtimeClasspath)
+    args = ["-threadcount", "2", "-d", "./build/", "./testng.xml"]
+}
+ */

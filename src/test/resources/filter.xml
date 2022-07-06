@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filters>
+    <filter>
+        <product>Laptop</product>
+        <brand>HP</brand>
+        <maxsum>1000000</maxsum>
+    </filter>
+    <filter>
+        <product>Laptop</product>
+        <brand>HP</brand>
+        <maxsum>1000000</maxsum>
+    </filter>
+    <filter>
+        <product>Laptop</product>
+        <brand>HP</brand>
+        <maxsum>1000000</maxsum>
+    </filter>
+    <filter>
+        <product>Laptop</product>
+        <brand>HP</brand>
+        <maxsum>1000000</maxsum>
+    </filter>
+</filters>

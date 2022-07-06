@@ -1,0 +1,3 @@
+rootProject.name = '13Gradle'
+println 'This is executed during the initialization phase.'
+
