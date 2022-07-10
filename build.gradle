@@ -5,7 +5,11 @@ plugins {
 
 group 'org.example'
 version '1.0-SNAPSHOT'
-
+configurations {
+    compileOnly{
+        extendsFrom annotationProcessor
+    }
+}
 repositories {
    // flatDir {
    //     dirs 'libs'
@@ -33,8 +37,7 @@ dependencies {
     implementation group: 'jakarta.xml.bind', name: 'jakarta.xml.bind-api', version: '4.0.0'
 // https://mvnrepository.com/artifact/com.sun.xml.bind/jaxb-impl
     implementation group: 'com.sun.xml.bind', name: 'jaxb-impl', version: '4.0.0'
-    implementation 'org.jetbrains:annotations:20.1.0'
-    implementation 'org.jetbrains:annotations:20.1.0'
+    implementation 'org.jetbrains:annotations:23.0.0'
 
 }
 /*
@@ -44,8 +47,6 @@ test {
 test {
     maxParallelForks = Runtime.runtime.availableProcessors().intdiv(2) ?: 1
 }
-
-
  */
 
 
@@ -60,7 +61,7 @@ test {
      options.threadCount = 2
 
        // include( 'BasketTest')
-        //options.suites file('testng.xml') скіпає тести чомусь
+        //options.suites file('testng.xml')// скіпає тести чомусь
           // suites '.src/test/resources/testng.xml' сейм
         reports.html.enabled=true
         reports.html.destination=file("$buildDir/reports/tests/test")
@@ -119,7 +120,7 @@ tasks.register('testBoth') {doFirst {
 
 compileJava.options.encoding = 'UTF-8'
 tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
+   options.encoding = 'UTF-8'
 }
 /*
 task runTests(type:JavaExec,dependsOn:'classes'){

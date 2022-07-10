@@ -1,22 +1,22 @@
-2022-07-06 21:49:41 INFO  [TestNG] Running:
-  C:\CustomRepo\internalCourse\13Gradle\src\test\resources\testng.xml
-
-2022-07-06 21:49:41 INFO  onStart method started 
-2022-07-06 21:49:41 INFO  Method started notAtomicityMethod
-2022-07-06 21:49:41 INFO  Method started notAtomicityMethod
-2022-07-06 21:49:41 INFO  Method started notAtomicityMethod
-2022-07-06 21:49:57 INFO  This method is invoked after- notAtomicityMethod
-2022-07-06 21:49:57 INFO  Method passed notAtomicityMethod
-2022-07-06 21:49:58 INFO  This method is invoked after- clean
-2022-07-06 21:49:58 INFO  Method started notAtomicityMethod
-2022-07-06 21:49:58 INFO  This method is invoked after- notAtomicityMethod
-2022-07-06 21:49:58 INFO  Method failed notAtomicityMethod
-2022-07-06 21:49:58 INFO  This method is invoked after- clean
-2022-07-06 21:49:59 INFO  This method is invoked after- notAtomicityMethod
-2022-07-06 21:49:59 INFO  Method passed notAtomicityMethod
-2022-07-06 21:49:59 INFO  This method is invoked after- clean
-2022-07-06 21:50:38 INFO  This method is invoked after- notAtomicityMethod
-2022-07-06 21:50:38 INFO  Method passed notAtomicityMethod
-2022-07-06 21:50:38 INFO  This method is invoked after- clean
-2022-07-06 21:50:38 INFO  This method is invoked after- terminate
-2022-07-06 21:50:38 INFO  onFinish method finished 
+2022-07-10 15:50:11 INFO  onStart method started 
+2022-07-10 15:50:11 INFO  Method started notAtomicityMethod
+2022-07-10 15:50:11 INFO  Method started notAtomicityMethod
+2022-07-10 15:50:57 INFO  Method passed notAtomicityMethod
+2022-07-10 15:50:57 WARN  onError
+java.net.SocketException: Connection reset
+	at java.base/sun.nio.ch.SocketChannelImpl.throwConnectionReset(SocketChannelImpl.java:394)
+	at java.base/sun.nio.ch.SocketChannelImpl.read(SocketChannelImpl.java:426)
+	at io.netty.buffer.PooledByteBuf.setBytes(PooledByteBuf.java:258)
+	at io.netty.buffer.AbstractByteBuf.writeBytes(AbstractByteBuf.java:1132)
+	at io.netty.channel.socket.nio.NioSocketChannel.doReadBytes(NioSocketChannel.java:357)
+	at io.netty.channel.nio.AbstractNioByteChannel$NioByteUnsafe.read(AbstractNioByteChannel.java:151)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKey(NioEventLoop.java:722)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeysOptimized(NioEventLoop.java:658)
+	at io.netty.channel.nio.NioEventLoop.processSelectedKeys(NioEventLoop.java:584)
+	at io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:496)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:995)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:831)
+2022-07-10 15:51:17 INFO  Method passed notAtomicityMethod
+2022-07-10 15:51:17 INFO  onFinish method finished 

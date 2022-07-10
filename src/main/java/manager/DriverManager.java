@@ -1,5 +1,6 @@
 package manager;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -37,11 +38,14 @@ public class DriverManager {
             WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(timeToWait));
              wait.until(ExpectedConditions.visibilityOf(locator));
        }
-//    public void waitForPageLoading(long timeToWait) {
-    //    new WebDriverWait(getDriver(), Duration.ofSeconds(timeToWait)).until(
-   //             webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
-  //  }
-
+    public static void waitForPageLoading(long timeToWait) {
+        new WebDriverWait(getDriver(), Duration.ofSeconds(timeToWait)).until(
+                webDriver -> ((JavascriptExecutor) webDriver).executeScript("return document.readyState").equals("complete"));
+    }
+    public static void wait2(WebElement locator) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.elementToBeClickable(locator));
+    }
     public static void terminate() {
         driverThread.remove();
     }

@@ -1,0 +1,23 @@
+
+?
+settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
+X
+(gradle/wrapper/gradle-wrapper.properties,f\b\fbe448ebfc3eb2d4e308f6b8b043666f5b57235e
+P
+ src/main/java/model/Filters.java,6\f\6fbdaa12b0817e2b2922ea707acac6129852d187
+O
+src/main/java/model/Filter.java,1\d\1d7623e8ff50f58674a4c38f175fbc97de2c7585
+Q
+!src/main/java/util/XMLStream.java,6\8\686a463801734c7d6c6a94bcc2c49d7c96d67f4b
+X
+(src/main/java/util/PropertiesReader.java,8\8\8858de0870fdbdc7070232b661d6fa84c9e430da
+Z
+*src/main/java/util/CustomTestListener.java,a\f\af94e08654d35206e85ade8b30fe1611eb31bf15
+^
+.src/main/java/bo/AddExpensiveItemToBasket.java,4\6\46c4b642ab0ebd361fb9c2978146936f62a65a1a
+S
+#src/main/java/decorator/Button.java,8\d\8d125692539d943a27cc70b767c919becc3c16c8
+]
+-src/main/java/decorator/FieldDecoratorEx.java,a\e\ae1700dc365f9214f68d8a54af504b2418826eba
+c
+3src/main/java/util/CustomMethodInvokedListener.java,f\7\f75498335ba462927453065a3bf7e32593cf881b

@@ -29,39 +29,47 @@ public class PageVerReturn extends BasePage {
     private WebElement BasketButton;
 
      public PageVerReturn searchFieldSendKeys(String searchKey) {
-             DriverManager.waitVisibilityOfElement(60,SearchField);
+            // DriverManager.waitVisibilityOfElement(60,SearchField);
+         DriverManager.waitForPageLoading(60);
              SearchField.sendKeys(searchKey);
              return this;
          }
           public PageVerReturn clickFindButton() throws InterruptedException {
-              DriverManager.waitVisibilityOfElement(60,FindButton);
+              //DriverManager.waitVisibilityOfElement(60,FindButton);
+           //   DriverManager.wait2(FindButton);
               FindButton.click();
               Thread.sleep(1000);
               return this;
           }
     public PageVerReturn hpCHeckBoxClick() throws InterruptedException {
-        Thread.sleep(1000);
+
+        DriverManager.wait2(hpCheckBoxClick);
         DriverManager.waitVisibilityOfElement(60,hpCheckBoxClick);
         hpCheckBoxClick.click();
+        Thread.sleep(1000);
         return this;
     }
     public PageVerReturn expensiveSortClick() throws InterruptedException {
         Thread.sleep(1000);
         DriverManager.waitVisibilityOfElement(60,expensiveSort);
+        DriverManager.wait2(expensiveSort);
         expensiveSort.click();
+        Thread.sleep(1000);
         return this;
     }
 
     public PageVerReturn firstElementClick() throws InterruptedException {
         Thread.sleep(1000);
-          DriverManager.waitVisibilityOfElement(60,firstElementOfQuerylist.get(1));
+        DriverManager.waitVisibilityOfElement(60,firstElementOfQuerylist.get(1));
+        DriverManager.wait2(firstElementOfQuerylist.get(1));
         firstElementOfQuerylist.get(1).click();
         return this;
     }
 
     public PageVerReturn buyClick() throws InterruptedException {
-        Thread.sleep(1000);
-          DriverManager.waitVisibilityOfElement(60,buyButton);
+     //   Thread.sleep(1000);
+         // DriverManager.waitVisibilityOfElement(60,buyButton);
+        DriverManager.wait2(buyButton);
          //   Actions ac = new Actions(DriverManager.getDriver());
        //   ac.moveToElement(DriverManager.getDriver().findElement(By.xpath("//span[text()=' Купить ']/ancestor::button[@aria-label='Купить']/ancestor::li"))).build().perform();
         buyButton.click();
